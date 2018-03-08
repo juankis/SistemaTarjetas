@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Enviar Tarjeta
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-slides #slides [options]="mySlideOptions">
+  <ion-slide *ngFor="let card of cards" [id]="card.id">
+    <img  [src]="card.path"> 
+  </ion-slide>
+</ion-slides>
+<ion-item>
+  <ion-label stacked>Baufesiano</ion-label>
+  <ion-select [(ngModel)]="receptorId" placeholder="Selecciona a un baufesiano ...">
+    <ion-option ion-item *ngFor="let item of items" [value]="item.id" >{{ item.name }}</ion-option>
+    
+  </ion-select>
+</ion-item>
+<ion-item>
+   <ion-label stacked>Mensaje</ion-label>
+   <ion-textarea [(ngModel)]="description" rows="6" placeholder="Escribe alguna dedicatoria ..."></ion-textarea>
+ </ion-item>
+ <button ion-button full (click)="newPublication();">
+  
+  <ion-icon name="send" > Right Icon </ion-icon>
+</button>
+
+</ion-content>

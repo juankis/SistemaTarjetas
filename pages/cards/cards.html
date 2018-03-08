@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Lista de Tarjetas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <button ion-item *ngFor="let item of items" (click)="openNavDetailsPage(item)" icon-left>
+          <ion-thumbnail item-left>
+            <img [src]="item.pathImagenTarjeta">
+          </ion-thumbnail>
+          <h2>{{ item.destinatario }}</h2>
+          <p>{{ item.description }}</p>
+          <p>{{ item.fecha }}</p>
+          
+        </button>  
+      </ion-item>
+  </ion-list>
+</ion-content>

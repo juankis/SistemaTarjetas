@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Muro de Tarjetas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+    <ion-item>
+      <button ion-item *ngFor="let item of items" (click)="openNavDetailsPage(item)" icon-left>
+          <ion-thumbnail item-left>
+            <img [src]="item.path">
+          </ion-thumbnail>
+          <h2>Para: {{ item.receptor_name }}</h2>
+          <p>{{ item.description }}</p>
+          <h3>De: {{ item.sender_name }}</h3>
+          
+          <p>{{ item.created_at }}</p>
+          
+        </button>  
+      </ion-item>
+  </ion-list>
+</ion-content>
